@@ -1,0 +1,4 @@
+This folder will contain:
+    index.html
+    gallery.html
+    about.html

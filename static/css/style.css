@@ -1,4 +1,31 @@
+body {
+    background-color: #fff8f0;
+    font-family: 'McLaren';
+}
 
+nav {
+    background-color: #5AA7FF;
+    width: 100%;
+    font-size: 20px;
+}
+
+nav ul{
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    
+}
+
+nav ul li {
+    margin-right: 15px;
+    
+}
+nav ul li a {
+    color: #fff8f0;
+    text-decoration: none;
+    padding-left: 10px;
+}
 
 
 .gallery {
@@ -10,4 +37,18 @@
 .gallery img {
     width: 200px;
     height: 200px;
+    border-radius: 10px;
+}
+
+.gallery-item:hover {
+    transform: scale(1.05);
+    transition: 0.5s;
+}
+
+.gallery-item {
+    background-color: #F4D06F;
+    padding: 10px;
+    border-radius: 10px;
+    text-align: center;
+    
 }

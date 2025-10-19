@@ -43,6 +43,8 @@ nav ul li a {
 .gallery-item:hover {
     transform: scale(1.05);
     transition: 0.5s;
+    cursor: pointer;
+    box-shadow: #00000000 5px 15px 15px 5px;
 }
 
 .gallery-item {
@@ -52,3 +54,4 @@ nav ul li a {
     text-align: center;
     
 }
+

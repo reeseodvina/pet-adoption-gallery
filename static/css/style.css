@@ -55,3 +55,14 @@ nav ul li a {
     
 }
 
+.see-more {
+    background-color: #5AA7FF;
+    color: #fff8f0;
+    border: none;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.added-list {
+    display: none;
+}

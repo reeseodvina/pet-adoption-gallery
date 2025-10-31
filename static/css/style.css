@@ -1,12 +1,14 @@
 body {
     background-color: #fff8f0;
     font-family: 'McLaren';
+    max-width: 80%;
 }
-
+ /* Navigation */
 nav {
     background-color: #5AA7FF;
-    width: 100%;
+    width: 100vw;
     font-size: 20px;
+    border-radius: 10px;
 }
 
 nav ul{
@@ -14,7 +16,7 @@ nav ul{
     display: flex;
     flex-wrap: wrap;
     list-style: none;
-    
+    margin-top: 0;
 }
 
 nav ul li {
@@ -24,14 +26,45 @@ nav ul li {
 nav ul li a {
     color: #fff8f0;
     text-decoration: none;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+nav ul li a:hover {
+    color: #c3bdb6;
+    text-decoration: none;
     padding-left: 10px;
 }
 
+nav .current-tab {
+    background-color: #3f7ec7;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 5px;
+    padding-right: 5px;
+    border-radius: 5px;
+}
 
+/*Text styling*/
+h1 {
+    text-align: center;
+    padding-bottom: 30px;
+}
+
+#webname h2 {
+    padding-bottom: 30px;
+    margin: 20px 20px 10px 20px;
+}
+
+/*Gallery*/
 .gallery {
     display: flex;
     flex-wrap: wrap;
-    gap: 15px;
+    flex: 1 0 25%;
+    gap: 25px;
+    text-align: center;
+    justify-content: center; 
+    margin: 0 auto; 
 }
 
 .gallery img {
@@ -49,20 +82,30 @@ nav ul li a {
 
 .gallery-item {
     background-color: #F4D06F;
-    padding: 10px;
+    height: 350px;
+    width: 275px;
+    padding-bottom: 20px;
     border-radius: 10px;
     text-align: center;
-    
+    max-width: 250px;
 }
 
-.see-more {
-    justify-content: center;
+button {
     background-color: #5AA7FF;
     color: #fff8f0;
     font-size: 20px;
     border: none;
     padding: 10px;
     border-radius: 10px;
+}
+
+button:hover {
+    background-color: #3f7ec7;
+}
+
+.see-more {
+    display: block;
+    margin: 20px auto;
 }
 
 .inactive {

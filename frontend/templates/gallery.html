@@ -6,14 +6,18 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=McLaren&display=swap" rel="stylesheet">
-        <script scr="../static/js/script.js"></script>
+        <script src="../../static/js/script.js"></script>
     </head>
     <body>
+        <div id="webname">
+            <h2>Pawfect Match</h2>
+           
+        </div>
         <div>
             <nav>
                 <ul>
                     <li><a href="index.html">Main Page</a></li>
-                    <li><a href="gallery.html">Look at your pet!</a></li>
+                    <li><a class="current-tab" href="gallery.html">Look at your pet!</a></li>
                     <li><a href="about.html">About</a></li>
                     <li><a href="quiz.html">Find your Best Furiend</a></li>
                 </ul>
@@ -69,17 +73,12 @@
             <p class="pet-sum">Border Collie - Age 6 Months</p>
         </div>
         </div>
- <div id="popUp">
-    <h2 class="pet-popUp-name">Shadow</h2>
-    <img class="pet-popUp-image" src="https://images.pexels.com/photos/220938/pexels-photo-220938.jpeg">
-    <h3 class="pet-sum">Border Collie - Age 6 Months</h3>
-
-</div>
 
 
 
 <div>
-    <button class="see-more" onclick="openTab(this)">See more</button> <!--Add a function here to be able to see additional pets-->>
+    <button class="see-more" onclick="openTab()">See more</button>  
+    
     <div id="added-list" class="inactive">
         <div class="gallery">
             <div class="gallery-item">

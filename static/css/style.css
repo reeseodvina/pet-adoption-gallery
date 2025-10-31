@@ -56,13 +56,19 @@ nav ul li a {
 }
 
 .see-more {
+    justify-content: center;
     background-color: #5AA7FF;
     color: #fff8f0;
+    font-size: 20px;
     border: none;
     padding: 10px;
     border-radius: 10px;
 }
 
-.added-list {
+.inactive {
     display: none;
+}
+
+.active {
+    display: block;
 }

@@ -6,6 +6,7 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=McLaren&display=swap" rel="stylesheet">
+        <script scr="../static/js/script.js"></script>
     </head>
     <body>
         <div>
@@ -17,6 +18,11 @@
                     <li><a href="quiz.html">Find your Best Furiend</a></li>
                 </ul>
             </nav>
+        </div>
+
+        <div id="calendar">
+            <h2>Schedule a meet up! (will be moved)</h2>
+            
         </div>
         
             <h1>Look at our lovable pets that need a home!</h1>
@@ -63,10 +69,60 @@
             <p class="pet-sum">Border Collie - Age 6 Months</p>
         </div>
         </div>
-    <div>
-        <button class="see-more" onclick="-----">See more</button> <!--Add a function here to be able to see additional pets-->>
+ <div id="popUp">
+    <h2 class="pet-popUp-name">Shadow</h2>
+    <img class="pet-popUp-image" src="https://images.pexels.com/photos/220938/pexels-photo-220938.jpeg">
+    <h3 class="pet-sum">Border Collie - Age 6 Months</h3>
+
+</div>
+
+
+
+<div>
+    <button class="see-more" onclick="openTab(this)">See more</button> <!--Add a function here to be able to see additional pets-->>
+    <div id="added-list" class="inactive">
+        <div class="gallery">
+            <div class="gallery-item">
+                <h3 class="pet-name">Pumpkin</h3>
+                <img class="pet-image" src="https://images.pexels.com/photos/1805164/pexels-photo-1805164.jpeg" alt="Image from Valeria Boltneva from Pexels">
+                <p class="pet-sum">Shiba Inu - Age 1 year</p>
+            </div>
+        <div class="gallery-item">
+            <h3 class="pet-name">Shadow</h3>
+            <img class="pet-image" src="https://images.pexels.com/photos/220938/pexels-photo-220938.jpeg" alt="Image from Pixabay from Pexels">
+            <p class="pet-sum">Border Collie - Age 6 Months</p>
+        </div>
+        <div class="gallery-item">
+            <h3 class="pet-name">Shadow</h3>
+            <img class="pet-image" src="https://images.pexels.com/photos/220938/pexels-photo-220938.jpeg" alt="Image from Pixabay from Pexels">
+            <p class="pet-sum">Border Collie - Age 6 Months</p>
+        </div>
+        <div class="gallery-item">
+            <h3 class="pet-name">Shadow</h3>
+            <img class="pet-image" src="https://images.pexels.com/photos/220938/pexels-photo-220938.jpeg" alt="Image from Pixabay from Pexels">
+            <p class="pet-sum">Border Collie - Age 6 Months</p>
+        </div>
+        <div class="gallery-item">
+            <h3 class="pet-name">Shadow</h3>
+            <img class="pet-image" src="https://images.pexels.com/photos/220938/pexels-photo-220938.jpeg" alt="Image from Pixabay from Pexels">
+            <p class="pet-sum">Border Collie - Age 6 Months</p>
+        </div>
+        <div class="gallery-item">
+            <h3 class="pet-name">Shadow</h3>
+            <img class="pet-image" src="https://images.pexels.com/photos/220938/pexels-photo-220938.jpeg" alt="Image from Pixabay from Pexels">
+            <p class="pet-sum">Border Collie - Age 6 Months</p>
+        </div>
+        <div class="gallery-item">
+            <h3 class="pet-name">Shadow</h3>
+            <img class="pet-image" src="https://images.pexels.com/photos/220938/pexels-photo-220938.jpeg" alt="Image from Pixabay from Pexels">
+            <p class="pet-sum">Border Collie - Age 6 Months</p>
+        </div>
+        <div class="gallery-item">
+            <h3 class="pet-name">Shadow</h3>
+            <img class="pet-image" src="https://images.pexels.com/photos/220938/pexels-photo-220938.jpeg" alt="Image from Pixabay from Pexels">
+            <p class="pet-sum">Border Collie - Age 6 Months</p>
+        </div>
+        </div>
     </div>
-    <div class="added-list">
-        <!--Add more pets down here, and have them remain hidden-->
-    </div>
+</div>
 </html>

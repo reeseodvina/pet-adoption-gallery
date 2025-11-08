@@ -1,52 +1,16 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
 body {
+    min-height: 100vh;
     background-color: #fff8f0;
     font-family: 'McLaren';
     max-width: 80%;
     margin: 0 auto;
     text-align: center;
 }
-
-/*Text styling*/
-h1 {
-    text-align: center;
-    padding-bottom: 30px;
-}
-
-h3 {
-    font-size: 25px;
-}
-
-p {
-    font-size: 20px;
-}
-
-#webname {
-    margin: 20px auto 10px auto;
-    display: block;
-    background-color: #FF8811;
-    border-radius: 10px;
-}
-
-#socials {
-    display: inline-flex;
-    gap: 20px
-}
-
-.social-icon {
-    cursor: pointer;
-    background-color: #5AA7FF;
-    color: #fff8f0;
-    font-size: 40px;
-    border: none;
-    padding: 10px;
-    border-radius: 10px;
-    transition: background-color 0.5s ease;
-}
-
-.social-icon:hover {
-    background-color: #3f7ec7;
-}
-
  /* Navigation */
 nav {
     background-color: #5AA7FF;
@@ -73,12 +37,12 @@ nav ul li a {
     text-decoration: none;
     padding-left: 5px;
     padding-right: 5px;
-    transition: background-color 0.5s ease;
 }
 
 nav ul li a:hover {
     color: #c3bdb6;
     text-decoration: none;
+    padding-left: 10px;
 }
 
 nav .current-tab {
@@ -90,43 +54,18 @@ nav .current-tab {
     border-radius: 5px;
 }
 
-
-
-/*Content Scroll*/
-.content {
-    max-width: 78.5%;
-    margin: 0 auto;
+/*Text styling*/
+h1 {
     text-align: center;
-    display: flex;
-    overflow-x: auto;
-    scroll-behavior: smooth;
-    gap: 15px;
+    padding-bottom: 30px;
 }
 
-.content > * {
-    flex-shrink: 0;
-    height: 350px;
+#webname {
+    margin: 20px 20px 10px 20px;
+    display: block;
+    background-color: #FF8811;
     border-radius: 10px;
-}
-
-.carousel-left, .carousel-right {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-40%);
-    cursor: pointer;
-    transition: background-color 0.5s ease;
-}
-
-.carousel-left:hover, .carousel-right:hover {
-    background-color: #3f7ec7;
-}
-
-.carousel-left {
-    left: 200px;
-}
-
-.carousel-right {
-    right: 200px;
+    width: 100%;
 }
 
 /*Gallery*/
@@ -148,7 +87,8 @@ nav .current-tab {
 }
 
 .gallery-item:hover {
-    transform: scale(1.05) 0.5s ease;
+    transform: scale(1.05);
+    transition: 0.5s;
     cursor: pointer;
     box-shadow: #00000000 5px 15px 15px 5px;
 }
@@ -175,10 +115,10 @@ button {
     border: none;
     padding: 10px;
     border-radius: 10px;
-    transition: background-color 0.5s ease;
 }
 
 button:hover {
+    transition: background-color 0.5 ease-in;
     background-color: #3f7ec7;
 }
 
@@ -193,49 +133,4 @@ button:hover {
 
 .active {
     display: block;
-}
-
-
-/*Quiz Styling*/
-#quiz {
-    display: block;
-    background-color: #F4D06F;
-    border-radius: 10px;
-    width: 70%;
-    height: 400px;
-    margin: 0 auto;
-    text-align: center;
-}
-
-.quiz-form {
-    padding-top: 10px;
-    padding-bottom: 10px;
-    text-align: center;
-}
-
-.question {
-    font-size: 30px;
-    text-align: center;
-}
-
-.answers {
-    font-size: 20px;
-}
-
-.answers table {
-    margin: 0 auto;
-    border-collapse: separate;
-    border-spacing: 20px;
-}
-
-.answers td {
-    height: 100px;
-    width: 300px;
-    border: 2.5px solid #FF8811;
-    border-radius: 10px;
-    transition: background-color 0.5s ease;
-}
-
-.answers td:hover {
-    background-color: #ff8811a9;
 }

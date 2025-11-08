@@ -1,0 +1,42 @@
+[
+  {
+    "name": "Azizi",
+    "image_url": "https://dbw3zep4prcju.cloudfront.net/animal/0894bd6e-77c5-4622-a717-7e20b8268330/image/0859e8e0-43e5-4920-845d-ca0b1252bcd2.jpg?versionId=CNYMtI511Olal5L4fTALHSxbXILkUoZR&bust=1762358429&width=1080",
+    "description": "Azizi is a fun-loving, smart, and slightly food-motivated pup."
+  },
+  {
+    "name": "Robbie",
+    "image_url": "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/79202357/1/?bust=1762413312&width=560",
+    "description": "He's a curious little observer when he's not busy playing!"
+  },
+  {
+    "name": "Max",
+    "image_url": "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/79158715/2/?bust=1762249292&width=1080",
+    "description": "Meet Max! This handsome boy may be big but he is a huge sweetie."
+  },
+  {
+    "name": "Mushu",
+    "image_url": "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/79202358/3/?bust=1762413318&width=1080",
+    "description": "Mushu is very lovable and loves to purr!"
+  },
+  {
+    "name": "Annaliese",
+    "image_url": "https://dbw3zep4prcju.cloudfront.net/animal/c3a22bc9-db40-4da6-88cd-b33d6aeaa9c3/image/05bc5e31-16c0-4b20-8244-fc13533b9576.jpeg?versionId=QA4NEnD19xlD57Spaq5I39uht6YFAjh0&bust=1762227935&width=560",
+    "description": "Sweet, spirited, and full of personality!"
+  },
+  {
+    "name": "Kit",
+    "image_url": "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/79032983/1/?bust=1762326850&width=560",
+    "description": "Kit is a sweet, cuddly ball of love who's ready to play!"
+  },
+  {
+    "name": "Jack",
+    "image_url": "https://dbw3zep4prcju.cloudfront.net/animal/7ffd2c71-6b30-45f3-a38f-6b403b1b5f9f/image/1b86de6a-e426-4e6d-b48d-1854206e0bab.jpg?versionId=KZjArS8ug5q_Iar6UvqRUdAm2kgfdCJX&bust=1762043163&width=560",
+    "description": "A truly special dog with a heart as big as his personality! "
+  },
+  {
+    "name": "Lil Petie",
+    "image_url": "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/79118269/1/?bust=1762413312&width=560",
+    "description": "Hi, there! I'm Lil Petie!"
+  }
+]

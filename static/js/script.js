@@ -26,3 +26,30 @@ function openTab() {
 }
 
 
+//Scroll content
+document.addEventListener('DOMContentLoaded', () => {
+    var content = document.querySelector(".content");
+    var rightArrow = document.getElementById('right-arrow');
+    var leftArrow = document.getElementById('left-arrow');
+
+    var scrollAmount = 350;
+
+    leftArrow.addEventListener('click', () => {
+        content.scrollBy({
+            left: -scrollAmount,
+            behavior: "smooth"
+        })
+    })
+
+    rightArrow.addEventListener('click', () => {
+        content.scrollBy({
+            left: scrollAmount,
+            behavior: "smooth"
+        })
+    })
+
+    setInterval(()=> {
+        carousel.scrollBy({ left: 350,
+            behavior: "smooth"});
+    }, 4000);
+})

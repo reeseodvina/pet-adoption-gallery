@@ -14,13 +14,30 @@
         </div>
         <div>
             <nav>
-                <ul>
-                    <li><a href="home.html">Main Page</a></li>
+                <ul class="sidebar">
+                    <li onclick=hideSidebar()><a class="current-tab" href="home.html"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#02001"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></a></li>
                     <li><a href="gallery.html">Look for your pet!</a></li>
-                    <li><a class="current-tab" href="about.html">About</a></li>
+                    <li><a href="about.html">About</a></li>
                     <li><a href="quiz.html">Find your Best Furiend</a></li>
                 </ul>
+                <ul>
+                    <li><a class="current-tab" href="home.html">Pawfect Match</a></li>
+                    <li class="hideOnMobile"><a href="gallery.html">Look for Your Pet!</a></li>
+                    <li class="hideOnMobile"><a href="about.html">About Us</a></li>
+                    <li class="hideOnMobile"><a href="quiz.html">Find Your Pawfect Match</a></li>
+                    <li class="menu-button" onclick=showSidebar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#02001"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a></li>
+                </ul>
             </nav>
+            <script>
+                function showSidebar(){
+                    const sidebar = document.querySelector('.sidebar')
+                    sidebar.style.display = 'flex'
+                }
+                function hideSidebar(){
+                    const sidebar = document.querySelector('.sidebar')
+                    sidebar.style.display = 'none'
+                }
+            </script>
         </div>
         <h1>About Us</h1>
         <h2>Welcome to our pet adoption gallery!</h2>

@@ -5,68 +5,82 @@
 
 body {
     min-height: 100vh;
-    background-color: #fff8f0;
+    background-image: url(pawfectbg.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
     font-family: 'McLaren';
-    max-width: 80%;
-    margin: 0 auto;
-    text-align: center;
 }
  /* Navigation */
 nav {
-    background-color: #5AA7FF;
-    width: 100%;
-    font-size: 20px;
-    border-radius: 10px;
-    margin-top: 0;
+    background-color: #F7F2EC;
+    box-shadow: 3px 3px 5px rgba(0,0,0,0.1);
 }
 
 nav ul{
-    padding: 10px;
+    width: 100%;
     display: flex;
-    flex-wrap: wrap;
     list-style: none;
-    margin-top: 0;
+    justify-content: flex-end;
+    align-items: center;
 }
 
-nav ul li {
-    margin-right: 15px;
+nav li {
+    height: 50px;
     
 }
-nav ul li a {
-    color: #fff8f0;
+nav a {
+    height: 100%;
+    color: #020100;
     text-decoration: none;
-    padding-left: 5px;
-    padding-right: 5px;
-}
-
-nav ul li a:hover {
-    color: #c3bdb6;
+    padding: 0 30px;
     text-decoration: none;
-    padding-left: 10px;
+    display: flex;
+    align-items: center;
 }
 
-nav .current-tab {
-    background-color: #3f7ec7;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    padding-left: 5px;
-    padding-right: 5px;
-    border-radius: 5px;
+nav a:hover {
+    color: purple;
+    background-color: #f0f0f0;
 }
 
+nav li:first-child {
+    margin-right: auto;
+}
+.sidebar{
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 250px;
+    z-index: 999;
+    background-color: rgba(255, 255, 255, 0.276);
+    backdrop-filter: blur(10px);
+    box-shadow: -10px 0 10px rgba(0, 0, 0, 0.1);
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+.sidebar li{
+    width: 100%;
+}
+.sidebar a{
+    width: 100%;
+}
 /*Text styling*/
 h1 {
     text-align: center;
     padding-bottom: 30px;
 }
 
-#webname {
+/*#webname {
     margin: 20px 20px 10px 20px;
     display: block;
-    background-color: #FF8811;
+    background-color: #F7F2EC;
     border-radius: 10px;
     width: 100%;
-}
+}*/
 
 /*Gallery*/
 .gallery {

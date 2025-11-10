@@ -5,7 +5,7 @@
 
 body {
     min-height: 100vh;
-    background-image: url(pawfectbg.png);
+    background-image: url(pawfectbg3.png);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -14,7 +14,7 @@ body {
  /* Navigation */
 nav {
     background-color: #F7F2EC;
-    box-shadow: 3px 3px 5px rgba(0,0,0,0.1);
+    /*box-shadow: 3px 3px 5px rgba(0,0,0,0.1);*/
 }
 
 nav ul{

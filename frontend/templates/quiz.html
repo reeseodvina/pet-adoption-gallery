@@ -38,25 +38,29 @@
                 }
             </script>
         </div>
-
-    <div>
-        <h2> Let's figure out who will be your new best friend!</h2>
-    </div>
-    <div id="quiz">
-        <div class="quiz-form">
-            <h3 class="question">What kind of animal would you want?</h3>
-            <div class="answers">
-                <table>
-                    <tr>
-                        <td>Dog</td>
-                        <td>Cat</td>
-                    </tr>
-                    <tr>
-                        <td>Hamster</td>
-                        <td>Bird</td>
-                    </tr>
-                </table>
+        <div class="container quiz-container">
+        <div class="logo">🐾</div>
+        
+        <div class="progress-bar">
+            <div class="paw-indicator" id="paw1">🐾</div>
+            <div class="paw-indicator" id="paw2">🐾</div>
+            <div class="paw-indicator" id="paw3">🐾</div>
+        </div>
+        
+        <div class="quiz-content">
+            <div class="cat-avatar">
+                <div class="cat-face">ฅ^•ﻌ•^ฅ</div>
+                <div class="speech-bubble" id="question-text">
+                    Question will appear here
+                </div>
+            </div>
+            
+            <div class="answers-container" id="answers-container">
+                <!-- Answers will be dynamically inserted here -->
             </div>
         </div>
     </div>
-    <body>
+    
+    <script src="script.js"></script>
+</body>
+</html>

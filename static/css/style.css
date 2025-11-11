@@ -122,7 +122,7 @@ h1 {
 }
 
 .gallery-item {
-    background-color: #F4D06F;
+    background-color: #bb6fe1c3;
     height: 350px;
     width: 275px;
     padding-bottom: 20px;
@@ -171,11 +171,14 @@ button:hover {
 }
 
 .logo {
-    font-size: 2rem;
     padding: 20px;
-    color: #8B7BA8;
 }
 
+.logo img {
+    height: 60px;
+    width: auto;
+    object-fit: contain;
+}
 /* Home Page */
 .home-container {
     display: flex;
@@ -234,6 +237,7 @@ button:hover {
     cursor: pointer;
     transition: all 0.3s ease;
     box-shadow: 0 4px 15px rgba(139, 123, 168, 0.3);
+    
 }
 
 .summon-btn:hover {

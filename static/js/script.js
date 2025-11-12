@@ -162,7 +162,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 })
 
-//This is for the quiz, by Claude Code
+//This is for the quiz
 // Quiz Data Structure
 const quizData = {
     sections: [
@@ -460,12 +460,9 @@ async function fetchPets(petType) {
     const matchesContainer = document.getElementById('matches-container');
     
     try {
-        // Note: You'll need to get your own API key from https://www.petfinder.com/developers/
-        // For demo purposes, using mock data
-        
-        // In production, uncomment this and add your API credentials:
+    
         /*
-        const tokenResponse = await fetch('https://api.petfinder.com/v2/oauth2/token', {
+        const tokenResponse = await fetch('https://api.rescuegroups.org/v5', {
             method: 'POST',
             body: 'grant_type=client_credentials&client_id=YOUR_CLIENT_ID&client_secret=YOUR_CLIENT_SECRET',
             headers: {

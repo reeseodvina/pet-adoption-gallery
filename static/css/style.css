@@ -5,7 +5,7 @@
 
 body {
     min-height: 100vh;
-    background-image: url(GWC\ Project\ 20.png);
+    background-image: url(PMBG.png);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -13,8 +13,8 @@ body {
 }
  /* Navigation */
 nav {
-    background-color: #F7F2EC;
-    /*box-shadow: 3px 3px 5px rgba(0,0,0,0.1);*/
+    background-color: #f7f2ec00;
+    box-shadow: 3px 3px 5px rgba(0,0,0,0.1);
 }
 
 nav ul{
@@ -31,7 +31,7 @@ nav li {
 }
 nav a {
     height: 100%;
-    color: #020100;
+    color: #cec8e2;
     text-decoration: none;
     padding: 0 30px;
     text-decoration: none;
@@ -40,8 +40,8 @@ nav a {
 }
 
 nav a:hover {
-    color: purple;
-    background-color: #f0f0f0;
+    color: rgb(40, 0, 73);
+    background-color: #b1a7d159;
 }
 
 nav li:first-child {

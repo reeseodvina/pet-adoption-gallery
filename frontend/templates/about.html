@@ -44,6 +44,8 @@
         <p>This site was created by Girls Who Code at UCF. We developed this pet adoption site to get an understanding on how to create a gallery for pets, how to create pet profiles and a custom quiz to find your puuurfect friend!</p>
         <div id="calendar-space">
         </div>
+        <div id="calendar-space">
+        </div>
         <div id="schedule-form" class="inactive">
             <div id="schedule-content">
                     <h3>Meet a pet</h3>
@@ -54,9 +56,11 @@
                         <option value="shadow">Shadow</option> <!--Example - see if we can get pet name API to link here as well-->
                     </select>
                     <br>
-                    <label for="time">What time? Choose between 9AM to 5PM</label>
+                    <label for="time">What time? Choose between 9AM to 5PM
+                        <br> either on the hour or half-hour
+                    </label>
                     <input type="time" id="time" name="time" min="9:00" max="17:00">
-                    <br>
+                    
                     <label for="name">What's your name?</label>
                     <input required type="text" id="name" name="name">
                     <br>
@@ -66,7 +70,7 @@
                     <label for="phone">Mobile Phone</label>
                     <input type="tel" id="phone" name="phone">
                     <br>
-                    <input type="submit" value="Submit" onclick="meetPet(event)">
+                    <input type="submit" value="Submit" id="submit" onclick="meetPet(event)">
                     <br>
                     <button id="close-schedule-form">Close</button>
                 </div>

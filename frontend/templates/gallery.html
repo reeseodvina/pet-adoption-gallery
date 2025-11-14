@@ -1,12 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>Gallery</title>
         <link rel="stylesheet" href="../../static/css/style.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=McLaren&display=swap" rel="stylesheet">
         <script src="../../static/js/script.js"></script>
+        <script>
+            fetch('../../backend/pets.json')
+            .then(res => {
+                return res.json();
+            })
+            .then(data => {
+                var option = document.querySelector('#pick-pet')
+                
+                galleryItems.forEach((item, index) => {
+                    var pet = data[index];
+                    if (!pet) return;
+
+                    if (pet) {
+                        var h3 = item.querySelector('h3.pet-name');
+                        h3.textContent = pet.name;
+
+                        var img = item.querySelector('img.pet-image');
+                        img.src = pet.image_url;
+                        img.alt = `Image of ${pet.name}`;
+
+                        var sum = item.querySelector('p.pet-sum');
+                        sum.textContent = pet.description;
+                    }
+                });
+            })
+        </script>
     </head>
     <body>
         <!--<div id="webname">
@@ -39,103 +64,41 @@
                 }
             </script>
         </div>
+        <h1>About Us</h1>
+        <p><p>Here at Pawefect Match, we make sure that the pet you're looking for is the best fit your you and your family. With so many different pets, all with their own personalities, likes, and love to give, we're sure that one will be your match!</p></p>
 
-        <div id="calendar">
-            <h2>Schedule a meet up! (will be moved)</h2>
-            
+        <p>This site was created by Girls Who Code at UCF. We developed this pet adoption site to get an understanding on how to create a gallery for pets, how to create pet profiles and a custom quiz to find your puuurfect friend!</p>
+        <div id="calendar-space">
         </div>
-        
-            <h1>Look at our lovable pets that need a home!</h1>
-    <div id="initial-list">
-        <div class="gallery">
-            <div class="gallery-item">
-                <h3 class="pet-name">Pumpkin</h3>
-                <img class="pet-image" src="https://images.pexels.com/photos/1805164/pexels-photo-1805164.jpeg" alt="Image from Valeria Boltneva from Pexels">
-                <p class="pet-sum">Shiba Inu - Age 1 year</p>
-            </div>
-        <div class="gallery-item">
-            <h3 class="pet-name">Shadow</h3>
-            <img class="pet-image" src="https://images.pexels.com/photos/220938/pexels-photo-220938.jpeg" alt="Image from Pixabay from Pexels">
-            <p class="pet-sum">Border Collie - Age 6 Months</p>
+        <div id="calendar-space">
         </div>
-        <div class="gallery-item">
-            <h3 class="pet-name">Shadow</h3>
-            <img class="pet-image" src="https://images.pexels.com/photos/220938/pexels-photo-220938.jpeg" alt="Image from Pixabay from Pexels">
-            <p class="pet-sum">Border Collie - Age 6 Months</p>
+        <div id="schedule-form" class="inactive">
+            <div id="schedule-content">
+                    <h3>Meet a pet</h3>
+                    <p id="selected-date"></p>
+                    <label for="pets">Who do you wanna meet?</label>
+                    <select required name="pets" id="pick-pet">
+                        
+                    </select>
+                    <br>
+                    <label for="time">What time? Choose between 9AM to 5PM
+                        <br> either on the hour or half-hour
+                    </label>
+                    <input type="time" id="time" name="time" min="9:00" max="17:00">
+                    
+                    <label for="name">What's your name?</label>
+                    <input required type="text" id="name" name="name">
+                    <br>
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email">
+                    <br>
+                    <label for="phone">Mobile Phone</label>
+                    <input type="tel" id="phone" name="phone">
+                    <br>
+                    <input type="submit" value="Submit" id="submit" onclick="meetPet(event)">
+                    <br>
+                    <button id="close-schedule-form">Close</button>
+                </div>
         </div>
-        <div class="gallery-item">
-            <h3 class="pet-name">Shadow</h3>
-            <img class="pet-image" src="https://images.pexels.com/photos/220938/pexels-photo-220938.jpeg" alt="Image from Pixabay from Pexels">
-            <p class="pet-sum">Border Collie - Age 6 Months</p>
-        </div>
-        <div class="gallery-item">
-            <h3 class="pet-name">Shadow</h3>
-            <img class="pet-image" src="https://images.pexels.com/photos/220938/pexels-photo-220938.jpeg" alt="Image from Pixabay from Pexels">
-            <p class="pet-sum">Border Collie - Age 6 Months</p>
-        </div>
-        <div class="gallery-item">
-            <h3 class="pet-name">Shadow</h3>
-            <img class="pet-image" src="https://images.pexels.com/photos/220938/pexels-photo-220938.jpeg" alt="Image from Pixabay from Pexels">
-            <p class="pet-sum">Border Collie - Age 6 Months</p>
-        </div>
-        <div class="gallery-item">
-            <h3 class="pet-name">Shadow</h3>
-            <img class="pet-image" src="https://images.pexels.com/photos/220938/pexels-photo-220938.jpeg" alt="Image from Pixabay from Pexels">
-            <p class="pet-sum">Border Collie - Age 6 Months</p>
-        </div>
-        <div class="gallery-item">
-            <h3 class="pet-name">Shadow</h3>
-            <img class="pet-image" src="https://images.pexels.com/photos/220938/pexels-photo-220938.jpeg" alt="Image from Pixabay from Pexels">
-            <p class="pet-sum">Border Collie - Age 6 Months</p>
-        </div>
-        </div>
-    </div>
-
-
-    <div id="added-list" class="inactive">
-        <div class="gallery">
-            <div class="gallery-item">
-                <h3 class="pet-name">Pumpkin</h3>
-                <img class="pet-image" src="https://images.pexels.com/photos/1805164/pexels-photo-1805164.jpeg" alt="Image from Valeria Boltneva from Pexels">
-                <p class="pet-sum">Shiba Inu - Age 1 year</p>
-            </div>
-            <div class="gallery-item">
-                <h3 class="pet-name">Shadow</h3>
-                <img class="pet-image" src="https://images.pexels.com/photos/220938/pexels-photo-220938.jpeg" alt="Image from Pixabay from Pexels">
-                <p class="pet-sum">Border Collie - Age 6 Months</p>
-            </div>
-            <div class="gallery-item">
-                <h3 class="pet-name">Shadow</h3>
-                <img class="pet-image" src="https://images.pexels.com/photos/220938/pexels-photo-220938.jpeg" alt="Image from Pixabay from Pexels">
-                <p class="pet-sum">Border Collie - Age 6 Months</p>
-            </div>
-            <div class="gallery-item">
-                <h3 class="pet-name">Shadow</h3>
-                <img class="pet-image" src="https://images.pexels.com/photos/220938/pexels-photo-220938.jpeg" alt="Image from Pixabay from Pexels">
-                <p class="pet-sum">Border Collie - Age 6 Months</p>
-            </div>
-            <div class="gallery-item">
-                <h3 class="pet-name">Shadow</h3>
-                <img class="pet-image" src="https://images.pexels.com/photos/220938/pexels-photo-220938.jpeg" alt="Image from Pixabay from Pexels">
-                <p class="pet-sum">Border Collie - Age 6 Months</p>
-            </div>
-            <div class="gallery-item">
-                <h3 class="pet-name">Shadow</h3>
-                <img class="pet-image" src="https://images.pexels.com/photos/220938/pexels-photo-220938.jpeg" alt="Image from Pixabay from Pexels">
-                <p class="pet-sum">Border Collie - Age 6 Months</p>
-            </div>
-            <div class="gallery-item">
-                <h3 class="pet-name">Shadow</h3>
-                <img class="pet-image" src="https://images.pexels.com/photos/220938/pexels-photo-220938.jpeg" alt="Image from Pixabay from Pexels">
-                <p class="pet-sum">Border Collie - Age 6 Months</p>
-            </div>
-            <div class="gallery-item">
-                <h3 class="pet-name">Shadow</h3>
-                <img class="pet-image" src="https://images.pexels.com/photos/220938/pexels-photo-220938.jpeg" alt="Image from Pixabay from Pexels">
-                <p class="pet-sum">Border Collie - Age 6 Months</p>
-            </div>
-        </div>
-    </div>
-    <button id="more-pets" class="see-more active" onclick="openTab()">See More </button>  
-
+    </body>
 </html>

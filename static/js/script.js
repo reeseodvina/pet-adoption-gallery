@@ -1,3 +1,5 @@
+
+//calendar function
 function getDay(date) {
     return date.getDay(); 
 }
@@ -9,23 +11,24 @@ function eventCalendar(elem, year, month) {
 
     let table = `
         <table>
-        <caption><i class="fa-solid fa-arrow-left left-arrow"></i>${date.toLocaleString('default', { month: 'long' })} ${year}<i class="fa-solid fa-arrow-right right-arrow"></caption>
+        <caption>${date.toLocaleString('default', { month: 'long' })} ${year}</caption>
         <tr>
             <th>Sunday</th><th>Monday</th><th>Tuesday</th>
             <th>Wednesday</th><th>Thursday</th><th>Friday</th><th>Saturday</th>
         </tr><tr>
     `;
 
-   
+    // Empty cells before the 1st day
     for (let i = 0; i < getDay(date); i++) {
         table += '<td></td>';
     }
 
+    // Generate days of the month
     while (date.getMonth() === mon) {
-        var fullDate = `${year}-${pad(month)}-${pad(date.getDate())}`;
+        const fullDate = `${year}-${pad(month)}-${pad(date.getDate())}`;
         table += `<td data-date="${fullDate}">${date.getDate()}</td>`;
 
-
+        // If it's Saturday and not the last day, start a new row
         if (getDay(date) === 6 && new Date(year, mon, date.getDate() + 1).getMonth() === mon) {
             table += '</tr><tr>';
         }
@@ -33,33 +36,17 @@ function eventCalendar(elem, year, month) {
         date.setDate(date.getDate() + 1);
     }
 
-
+    // Fill remaining cells of the last week
     if (getDay(new Date(year, mon + 1, 0)) !== 6) {
         for (let i = getDay(new Date(year, mon + 1, 0)) + 1; i <= 6; i++) {
             table += '<td></td>';
         }
     }
 
-
+    // Always close the last row and table
     table += '</tr></table>';
 
     elem.innerHTML = table;
-
-    var leftArrow = document.querySelector(".left-arrow");
-    var rightArrow = document.querySelector(".right-arrow");
-
-    
-
-        leftArrow.addEventListener('click', () => {
-            currentDate = new Date(currentDate.getFullYear(), currentDate.getMonth() - 1, 1);
-            eventCalendar(elem, currentDate.getFullYear(), currentDate.getMonth() + 1);
-        });
-
-        rightArrow.addEventListener('click', () => {
-            currentDate = new Date(currentDate.getFullYear(), currentDate.getMonth() + 1, 1);
-            eventCalendar(elem, currentDate.getFullYear(), currentDate.getMonth() + 1);
-        });
-
 
     window.openScheduleForm = (date) => {
             var selectedDate = document.getElementById('selected-date')
@@ -72,23 +59,7 @@ function eventCalendar(elem, year, month) {
         };
 
     elem.querySelectorAll("td[data-date]").forEach(td => {
-        
-        td.addEventListener('click',() => {
-            var selectedDate = new Date(td.dataset.date)
-            selectedDate.getTime(0, 0, 0, 0);
-            var today = new Date();  
-
-            var maxDate = new Date(); 
-            maxDate.setDate(today.getDate() + 7);
-
-            if (selectedDate < today || selectedDate > maxDate) {
-                alert(`You can only schedule from today to ${maxDate}`);
-                return;
-            }
-
-
-            openScheduleForm(td.dataset.date);
-        });
+        td.addEventListener('click',() => openScheduleForm(td.dataset.date));
     });
 
    
@@ -96,9 +67,11 @@ function eventCalendar(elem, year, month) {
 
 document.addEventListener("DOMContentLoaded", () => {
     var calendarSpace = document.getElementById("calendar-space");
+    var scheduleContent= document.getElementById('schedule-content');
     var scheduleForm = document.getElementById('schedule-form');
-    var today = new Date();       
+            
     
+    var today = new Date();
     eventCalendar(calendarSpace, today.getFullYear(), today.getMonth() + 1);
 
     var closeScheduleForm = document.getElementById("close-schedule-form");
@@ -112,71 +85,31 @@ document.addEventListener("DOMContentLoaded", () => {
 //Calendar form
 
 function meetPet(event) {
-    var email = document.getElementById('email').value.trim();
-    var phone = document.getElementById('phone').value.trim();
-    var time = document.getElementById('time').value.trim();
-    var pickPet = document.getElementById('pick-pet').value.trim();
-    var name = document.getElementById('name').value.trim();
+    var email = document.getElementById('email');
+    var phone = document.getElementById('phone');
 
-    var selectedDate = document.getElementById('selected-date').textContent.replace('Selected date: ', '');
-
-
-    var [hours, minutes] = time.split(':');
-    var selectedTime = new Date();
-    selectedTime.setHours(hours, minutes, 0, 0)
-
-    var earlyHour = new Date();
-    earlyHour.setHours(9, 0 , 0, 0);
-
-    var lateHour = new Date();
-    lateHour.setHours(17, 0, 0, 0);
-
-    
-
-    
-    if (!selectedTime || selectedTime < earlyHour || selectedTime > lateHour || selectedTime.getMinutes() !== 0 && selectedTime.getMinutes() !== 30) {
-        alert('Please put a valid time')
-        event.preventDefault();
-        return;
-    } else if (!email && !phone) {
+    if (!email.value && !phone.value) {
         alert('Email or phone number required');
         event.preventDefault();
         return;
-    } else if (!name) {
-        alert('Give us a name so we know who to look for when you come');
-        event.preventDefault();
-        return;
-    } else if (!pickPet) {
+    };
+
+    var pickPet = document.getElementById('pick-pet');
+
+    if (!pickPet.value) {
         alert("Pick a friend to meet");
         event.preventDefault();
         return;
-    }
+    };
     
-            
+}
 
-    var chosenDate = document.querySelector(`td[data-date="${selectedDate}"]`);
-
-    var Header = document.createElement("h4");
-    var HeaderText = document.createTextNode(`Meet ${pickPet}!`);
-
-    var Des = document.createElement("p");
-    var DesText = document.createTextNode(`${name} will meet with ${pickPet} at ${selectedDate}, ${time}!`);
-
-    var Event = document.createElement("div");
-    Event.setAttribute("class", "event");
-
-    Des.appendChild(DesText);
-    Header.appendChild(HeaderText);
-    Header.appendChild(Des);
-    Event.appendChild(Header);
     
-    chosenDate.appendChild(Event);
 
-    var scheduleForm = document.getElementById('schedule-form');
-    scheduleForm.classList.add('inactive');
-    scheduleForm.classList.remove('active');
-            alert(`You're set to meet ${pickPet}!`)
-    }
+    
+
+
+
 
 
 //see more dropdown here
@@ -522,7 +455,7 @@ function initResults() {
     fetchPets(petType);
 }
 
-// Fetch Pets from Petfinder API
+// Fetch Pets from Recue Groups API
 async function fetchPets(petType) {
     const matchesContainer = document.getElementById('matches-container');
     

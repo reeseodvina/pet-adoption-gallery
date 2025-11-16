@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'Tarot';
+    src: url('fonts/Tarot.eot');
+    src: url('fonts/Tarot.eot?#iefix') format('embedded-opentype'),
+         url('fonts/Tarot.woff2') format('woff2'),
+         url('fonts/Tarot.woff') format('woff'),
+         url('fonts/Tarot.ttf')  format('truetype'),
+         url('fonts/Tarot.svg#Tarot') format('svg');
+}

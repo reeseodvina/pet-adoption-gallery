@@ -5,13 +5,96 @@
 
 body {
     min-height: 100vh;
-    background-image: url(PMBG.png);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
+    background: radial-gradient(ellipse at bottom, #1B2735 0%, #090A0F 100%);
+    color: #333;
+    overflow-x: hidden;
+    position: relative;
     font-family: 'McLaren';
 }
+/*Star animation background*/
+#stars, #stars2, #stars3 {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
 
+#stars {
+    width: 1px;
+    height: 1px;
+    background: transparent;
+    box-shadow: 1790px 1318px #FFF, 650px 1711px #FFF, 1348px 382px #FFF, 1818px 1820px #FFF, 483px 1226px #FFF, 1143px 996px #FFF, 905px 675px #FFF, 1997px 235px #FFF, 1698px 1809px #FFF, 445px 1026px #FFF, 1805px 434px #FFF, 1473px 991px #FFF, 960px 1902px #FFF, 1167px 1405px #FFF, 166px 1870px #FFF, 345px 426px #FFF, 1062px 1175px #FFF, 1853px 935px #FFF, 1585px 488px #FFF, 1295px 1712px #FFF, 738px 1529px #FFF, 1241px 701px #FFF, 289px 1247px #FFF, 1654px 144px #FFF, 1866px 1628px #FFF, 1450px 1899px #FFF, 1025px 311px #FFF, 512px 1595px #FFF, 1732px 1248px #FFF, 869px 78px #FFF, 1418px 1443px #FFF, 204px 884px #FFF, 1592px 772px #FFF, 419px 1984px #FFF, 1769px 567px #FFF, 1149px 1333px #FFF, 1924px 1730px #FFF, 776px 1487px #FFF, 614px 239px #FFF, 1371px 1064px #FFF;
+    animation: animStar 30s linear infinite;
+}
+
+#stars:after {
+    content: " ";
+    position: absolute;
+    top: 2000px;
+    width: 1px;
+    height: 1px;
+    background: transparent;
+    box-shadow: 1790px 1318px #FFF, 650px 1711px #FFF, 1348px 382px #FFF, 1818px 1820px #FFF, 483px 1226px #FFF, 1143px 996px #FFF, 905px 675px #FFF, 1997px 235px #FFF, 1698px 1809px #FFF, 445px 1026px #FFF, 1805px 434px #FFF, 1473px 991px #FFF, 960px 1902px #FFF, 1167px 1405px #FFF, 166px 1870px #FFF, 345px 426px #FFF, 1062px 1175px #FFF, 1853px 935px #FFF, 1585px 488px #FFF, 1295px 1712px #FFF, 738px 1529px #FFF, 1241px 701px #FFF, 289px 1247px #FFF, 1654px 144px #FFF, 1866px 1628px #FFF, 1450px 1899px #FFF, 1025px 311px #FFF, 512px 1595px #FFF, 1732px 1248px #FFF, 869px 78px #FFF, 1418px 1443px #FFF, 204px 884px #FFF, 1592px 772px #FFF, 419px 1984px #FFF, 1769px 567px #FFF, 1149px 1333px #FFF, 1924px 1730px #FFF, 776px 1487px #FFF, 614px 239px #FFF, 1371px 1064px #FFF;
+}
+
+#stars2 {
+    width: 2px;
+    height: 2px;
+    background: transparent;
+    box-shadow: 1245px 916px #FFF, 378px 1562px #FFF, 1893px 724px #FFF, 602px 1338px #FFF, 1467px 201px #FFF, 945px 1789px #FFF, 1723px 445px #FFF, 289px 1067px #FFF, 1556px 1423px #FFF, 812px 634px #FFF, 1990px 1156px #FFF, 467px 890px #FFF, 1334px 1601px #FFF, 1089px 378px #FFF, 1801px 1934px #FFF, 534px 1245px #FFF, 1678px 867px #FFF, 923px 1512px #FFF, 156px 1723px #FFF, 1456px 589px #FFF;
+    animation: animStar 50s linear infinite;
+}
+
+#stars2:after {
+    content: " ";
+    position: absolute;
+    top: 2000px;
+    width: 2px;
+    height: 2px;
+    background: transparent;
+    box-shadow: 1245px 916px #FFF, 378px 1562px #FFF, 1893px 724px #FFF, 602px 1338px #FFF, 1467px 201px #FFF, 945px 1789px #FFF, 1723px 445px #FFF, 289px 1067px #FFF, 1556px 1423px #FFF, 812px 634px #FFF, 1990px 1156px #FFF, 467px 890px #FFF, 1334px 1601px #FFF, 1089px 378px #FFF, 1801px 1934px #FFF, 534px 1245px #FFF, 1678px 867px #FFF, 923px 1512px #FFF, 156px 1723px #FFF, 1456px 589px #FFF;
+}
+
+#stars3 {
+    width: 3px;
+    height: 3px;
+    background: transparent;
+    box-shadow: 823px 1456px #FFF, 1567px 389px #FFF, 445px 1823px #FFF, 1789px 1045px #FFF, 901px 612px #FFF, 1334px 1678px #FFF, 267px 934px #FFF, 1901px 523px #FFF, 678px 1267px #FFF, 1523px 1890px #FFF;
+    animation: animStar 50s linear infinite;
+}
+
+#stars3:after {
+    content: " ";
+    position: absolute;
+    top: 2000px;
+    width: 3px;
+    height: 3px;
+    background: transparent;
+    box-shadow: 823px 1456px #FFF, 1567px 389px #FFF, 445px 1823px #FFF, 1789px 1045px #FFF, 901px 612px #FFF, 1334px 1678px #FFF, 267px 934px #FFF, 1901px 523px #FFF, 678px 1267px #FFF, 1523px 1890px #FFF;
+}
+
+@keyframes animStar {
+    from {
+        transform: translateY(0px);
+    }
+    to {
+        transform: translateY(-2000px);
+    }
+}
+
+@font-face {
+    font-family: 'Tarot';
+    src: url('fonts/Tarot.eot');
+    src: url('fonts/Tarot.eot?#iefix') format('embedded-opentype'),
+         url('fonts/Tarot.woff2') format('woff2'),
+         url('fonts/Tarot.woff') format('woff'),
+         url('fonts/Tarot.ttf')  format('truetype'),
+         url('fonts/Tarot.svg#Tarot') format('svg');
+}
 .ruslan-display-regular {
   font-family: "Ruslan Display", sans-serif;
   font-weight: 400;
@@ -38,7 +121,7 @@ nav li {
 }
 nav a {
     height: 100%;
-    color: #cec8e2;
+    color: #b9a4db;
     text-decoration: none;
     padding: 0 30px;
     text-decoration: none;
@@ -145,7 +228,7 @@ h1 {
 button {
     cursor: pointer;
     background-color: #5AA7FF;
-    color: #fff8f0;
+    color: #2c1703;
     font-size: 20px;
     border: none;
     padding: 10px;
@@ -168,7 +251,6 @@ button:hover {
 
 .active {
     display: block;
-<<<<<<< HEAD
 }
 /*Quiz*/
 .container {
@@ -183,9 +265,10 @@ button:hover {
 }
 
 .logo img {
-    height: 60px;
+    height: 500px;
     width: auto;
     object-fit: contain;
+    left: 150px;
 }
 /* Home Page */
 .home-container {
@@ -229,7 +312,7 @@ button:hover {
 
 .main-title {
     font-size: 2.5rem;
-    color: #333;
+    color: #2c1703;
     margin-bottom: 30px;
     line-height: 1.2;
 }
@@ -553,92 +636,3 @@ button:hover {
         font-size: 1rem;
     }
 }
-=======
-
-}
-
-/*Calendar*/
-
-#calendar-space table {
-    text-align: center;
-    margin: 0 auto;
-    background-color: #f4e2b0;
-    border: 2.5px solid #F4D06F;
-    border-radius: 10px;
-    border-collapse: collapse;
-    z-index: 1;
-    position: relative;
-}
-
-#calendar-space th {
-    background-color: #F4D06F;
-    border: 2.5px dashed #ebc763;
-    height: 40px;
-    width: 150px;
-}
-
-#calendar-space td {
-    cursor: pointer;
-    border: 2px solid #F4D06F;
-    height: 50px;
-    font-size: 15px;
-}
-
-#calendar-space td:empty {
-    background-color: #ebd28e;
-}
-
-#calendar-space .left-arrow {
-    padding-right: 10px;
-}
-
-#calendar-space .right-arrow {
-    padding-left: 10px;
-}
-
-#calendar-space .left-arrow, #calendar-space .right-arrow {
-    position: relative;
-    font-size: 50px;
-    cursor: pointer;
-}
-#calendar-space table caption {
-    font-size: 20px;
-    padding-bottom: 10px;
-}
-
-#schedule-form {
-    position: fixed;
-    top: 60%;
-    left: 60%;
-    transform: translate(-50%, -50%); 
-    width: 100%;
-    height: 100%;
-    justify-content: center;
-    align-items: center;
-    z-index: 999;
-}
-
-#schedule-content {
-    display: flex;
-    flex-direction: column;
-    background-color: #3f7ec7;
-    color: #fff8f0;
-    text-align: center;
-    border-radius: 10px;
-    padding: 20px;
-    width: 400px;
-    height: auto;
-}
-
-#schedule-content input  {
-    font-family: 'McLaren';
-    font-size: 15px;
-    border-radius: 10px;
-}
-
-#schedule-content select {
-    font-family: 'McLaren';
-    font-size: 15px;
-    border-radius: 10px;
-}
->>>>>>> e90a5883260d3299a3a282c6235b1f3ee0fbb4f6

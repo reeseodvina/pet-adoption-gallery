@@ -11,6 +11,9 @@
         <!--<div id="webname">
             <h2>Pawfect Match</h2>
         </div>-->
+        <div id="stars"></div>
+        <div id="stars2"></div>
+        <div id="stars3"></div>
         <div>
             <nav>
                 <ul class="sidebar">
@@ -62,5 +65,30 @@
     </div>
     
     <script src="script.js"></script>
+    <script>
+    async function submitQuiz(preferences) {
+        const params = new URLSearchParams(preferences).toString();
+        const res = await fetch(`/api/quiz-pets?${params}`);
+        const data = await res.json();
+
+  // Save for results page
+        localStorage.setItem('quizMatches', JSON.stringify(data.pets || []));
+        localStorage.setItem('resultTitle', 'Your Pawfect Match');
+        const descBits = [];
+        if (preferences.species) descBits.push(preferences.species);
+        if (preferences.age) descBits.push(preferences.age);
+        if (preferences.sex) descBits.push(preferences.sex);
+        localStorage.setItem('resultDescription', descBits.join(' • '));
+
+  // Go to results
+        window.location.href = '/results.html';
+}
+
+/* --- Example hookup: replace this with your real quiz completion handler --- */
+window.exampleFinishQuiz = function () {
+  // TODO: derive these from the user's answers
+    submitQuiz({ species: 'dogs', age: 'Adult', sex: 'Female', limit: 12 });
+};
+    </script>
 </body>
 </html>

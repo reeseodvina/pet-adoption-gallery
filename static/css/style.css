@@ -14,6 +14,7 @@ body {
     background-repeat: no-repeat;
     background-position: center;*/
     font-family: 'McLaren';
+    max-width: 95%;
 }
 /*Star animation background*/
 #stars, #stars2, #stars3 {
@@ -181,8 +182,13 @@ nav li:first-child {
 h1 {
     text-align: center;
     padding-bottom: 30px;
+    color: #c6b3e4;
 }
 
+
+p {
+    color: #c6b3e4;
+}
 /*#webname {
     margin: 20px 20px 10px 20px;
     display: block;

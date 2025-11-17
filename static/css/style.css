@@ -587,6 +587,7 @@ button:hover {
     border-radius: 25px;
     padding: 15px 40px;
     font-size: 1.1rem;
+    font-family: "ruslan display","mclaren",'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-weight: bold;
     cursor: pointer;
     transition: all 0.3s ease;

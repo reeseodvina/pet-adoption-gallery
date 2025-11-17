@@ -175,7 +175,7 @@ const quizData = {
                         { text: "Very active and outdoorsy", scores: { adventurous: 3, cuddly: 1 } },
                         { text: "Moderate activity, some outdoors", scores: { roommate: 2, adventurous: 1 } },
                         { text: "Mostly indoors and relaxed", scores: { cuddly: 2, roommate: 2 } },
-                        { text: "Unpredictable and varied", scores: { spooky: 2, adventurous: 1 } }
+                        { text: "Unpredictable and varied", scores: { curious: 2, adventurous: 1 } }
                     ]
                 },
                 {
@@ -183,8 +183,8 @@ const quizData = {
                     answers: [
                         { text: "House with yard", scores: { adventurous: 3, roommate: 1 } },
                         { text: "Apartment with space", scores: { roommate: 2, cuddly: 2 } },
-                        { text: "Small apartment", scores: { cuddly: 3, spooky: 1 } },
-                        { text: "Changing/temporary", scores: { spooky: 2 } }
+                        { text: "Small apartment", scores: { cuddly: 3, curious: 1 } },
+                        { text: "Changing/temporary", scores: { curious: 2 } }
                     ]
                 },
                 {
@@ -193,16 +193,16 @@ const quizData = {
                         { text: "Several hours of active time", scores: { adventurous: 3 } },
                         { text: "A few hours of interaction", scores: { roommate: 2, cuddly: 1 } },
                         { text: "Limited but quality time", scores: { cuddly: 2, roommate: 1 } },
-                        { text: "Variable schedule", scores: { spooky: 2 } }
+                        { text: "Variable schedule", scores: { curious: 2 } }
                     ]
                 },
                 {
                     question: "What's your experience with pets?",
                     answers: [
-                        { text: "Extensive experience", scores: { adventurous: 2, spooky: 2 } },
+                        { text: "Extensive experience", scores: { adventurous: 2, curious: 2 } },
                         { text: "Some experience", scores: { roommate: 2 } },
                         { text: "First-time pet owner", scores: { cuddly: 2, roommate: 1 } },
-                        { text: "Ready for a challenge", scores: { spooky: 3, adventurous: 1 } }
+                        { text: "Ready for a challenge", scores: { curious: 3, adventurous: 1 } }
                     ]
                 },
                 {
@@ -211,7 +211,7 @@ const quizData = {
                         { text: "Love grooming and care routines", scores: { cuddly: 3 } },
                         { text: "Don't mind regular upkeep", scores: { adventurous: 2, roommate: 1 } },
                         { text: "Prefer low-maintenance", scores: { roommate: 3 } },
-                        { text: "Up for unique challenges", scores: { spooky: 3 } }
+                        { text: "Up for unique challenges", scores: { curious: 3 } }
                     ]
                 }
             ]
@@ -225,16 +225,16 @@ const quizData = {
                         { text: "Adventure buddy", scores: { adventurous: 3 } },
                         { text: "Loyal sidekick", scores: { cuddly: 2, adventurous: 1 } },
                         { text: "Independent coexistence", scores: { roommate: 3 } },
-                        { text: "Mysterious connection", scores: { spooky: 3 } }
+                        { text: "Mysterious connection", scores: { curious: 3 } }
                     ]
                 },
                 {
                     question: "How do you handle unexpected situations?",
                     answers: [
-                        { text: "Embrace the chaos!", scores: { adventurous: 2, spooky: 2 } },
+                        { text: "Embrace the chaos!", scores: { adventurous: 2, curious: 2 } },
                         { text: "Stay calm and adapt", scores: { roommate: 2 } },
                         { text: "Prefer routine and predictability", scores: { cuddly: 2 } },
-                        { text: "Find it exciting", scores: { spooky: 2, adventurous: 1 } }
+                        { text: "Find it exciting", scores: { curious: 2, adventurous: 1 } }
                     ]
                 },
                 {
@@ -243,7 +243,7 @@ const quizData = {
                         { text: "Hiking or outdoor adventure", scores: { adventurous: 3 } },
                         { text: "Relaxing at home", scores: { cuddly: 3 } },
                         { text: "Social gatherings", scores: { roommate: 2 } },
-                        { text: "Something unusual", scores: { spooky: 3 } }
+                        { text: "Something unusual", scores: { curious: 3 } }
                     ]
                 },
                 {
@@ -251,8 +251,8 @@ const quizData = {
                     answers: [
                         { text: "Very social, lots of visitors", scores: { roommate: 3, adventurous: 1 } },
                         { text: "Moderately social", scores: { cuddly: 2, roommate: 1 } },
-                        { text: "Prefer quiet and privacy", scores: { spooky: 2, cuddly: 1 } },
-                        { text: "Varies greatly", scores: { spooky: 1 } }
+                        { text: "Prefer quiet and privacy", scores: { curious: 2, cuddly: 1 } },
+                        { text: "Varies greatly", scores: { curious: 1 } }
                     ]
                 },
                 {
@@ -261,7 +261,7 @@ const quizData = {
                         { text: "Their energy and playfulness", scores: { adventurous: 3 } },
                         { text: "Unconditional love", scores: { cuddly: 3 } },
                         { text: "Their independence", scores: { roommate: 3 } },
-                        { text: "Their unique personalities", scores: { spooky: 3 } }
+                        { text: "Their unique personalities", scores: { curious: 3 } }
                     ]
                 }
             ]
@@ -272,10 +272,10 @@ const quizData = {
                 {
                     question: "What size pet appeals to you?",
                     answers: [
-                        { text: "Large and sturdy", scores: { adventurous: 3 } },
-                        { text: "Medium-sized", scores: { roommate: 2 } },
-                        { text: "Small and portable", scores: { cuddly: 2 } },
-                        { text: "Size doesn't matter", scores: { spooky: 1, roommate: 1 } }
+                        { text: "Large like Clifford", scores: { adventurous: 3 } },
+                        { text: "Medium-sized", scores: { roommate: 2, cuddly: 1 } },
+                        { text: "Small enough to walk around with", scores: { cuddly: 2 } },
+                        { text: "Size doesn't matter", scores: { curious: 1, roommate: 1 } }
                     ]
                 },
                 {
@@ -283,26 +283,26 @@ const quizData = {
                     answers: [
                         { text: "Love an expressive pet", scores: { adventurous: 2 } },
                         { text: "Some noise is fine", scores: { roommate: 2 } },
-                        { text: "Prefer quiet companions", scores: { cuddly: 2, spooky: 1 } },
-                        { text: "Mysterious sounds are cool", scores: { spooky: 3 } }
+                        { text: "Prefer quiet companions", scores: { cuddly: 2, curious: 1 } },
+                        { text: "Mysterious sounds are cool", scores: { curious: 3 } }
                     ]
                 },
                 {
                     question: "What's your tolerance for mess?",
                     answers: [
-                        { text: "Don't mind the chaos", scores: { adventurous: 2, spooky: 2 } },
+                        { text: "Don't mind the chaos", scores: { adventurous: 2, curious: 2 } },
                         { text: "Can handle some mess", scores: { roommate: 2 } },
                         { text: "Prefer tidy", scores: { cuddly: 2 } },
-                        { text: "Unconventional mess is okay", scores: { spooky: 2 } }
+                        { text: "Unconventional mess is okay", scores: { curious: 2 } }
                     ]
                 },
                 {
                     question: "Budget for pet care?",
                     answers: [
-                        { text: "Ready for any expense", scores: { adventurous: 1, spooky: 1 } },
+                        { text: "Ready for any expense", scores: { adventurous: 1, curious: 1 } },
                         { text: "Moderate budget", scores: { roommate: 2, cuddly: 1 } },
                         { text: "Cost-conscious", scores: { roommate: 2 } },
-                        { text: "Flexible for right pet", scores: { spooky: 1, cuddly: 1 } }
+                        { text: "Flexible for right pet", scores: { curious: 1, cuddly: 1 } }
                     ]
                 },
                 {
@@ -310,7 +310,7 @@ const quizData = {
                     answers: [
                         { text: "Lifetime companion", scores: { cuddly: 3, adventurous: 2 } },
                         { text: "Many years together", scores: { roommate: 2 } },
-                        { text: "Open to see how it goes", scores: { spooky: 1 } },
+                        { text: "Open to see how it goes", scores: { curious: 1 } },
                         { text: "Fully committed", scores: { adventurous: 2, cuddly: 2 } }
                     ]
                 }
@@ -348,7 +348,7 @@ let currentSection = 0;
 let currentQuestion = 0;
 let scores = {
     adventurous: 0,
-    spooky: 0,
+    curious: 0,
     roommate: 0,
     cuddly: 0
 };
@@ -454,7 +454,7 @@ function initResults() {
     fetchPets(petType);
 }
 
-// Fetch Pets from Recue Groups API
+// Fetch Pets from Rescue Groups API
 async function fetchPets(petType) {
     const matchesContainer = document.getElementById('matches-container');
     
@@ -552,7 +552,7 @@ function displayMatches(pets, petType) {
 function getPetIcon(petType) {
     const icons = {
         adventurous: '🐕',
-        spooky: '🐱',
+        curious: '🐱',
         roommate: '🐈',
         cuddly: '🐶'
     };
@@ -564,4 +564,33 @@ if (window.location.pathname.includes('quiz.html')) {
     document.addEventListener('DOMContentLoaded', initQuiz);
 } else if (window.location.pathname.includes('results.html')) {
     document.addEventListener('DOMContentLoaded', initResults);
+}
+
+const apiFilters = {
+    adventurous: {
+        type: ['dog'],
+        size: ['medium', 'large'],
+        attributes: ['house_trained', 'good_with_children'],
+        age: ['young', 'adult'],
+        sort: 'distance'
+    },
+    curious: {
+        type: ['cat', 'dog'],
+        coat: ['short', 'medium', 'hairless'],
+        attributes: ['independent'],
+        age: ['adult', 'senior'],
+        sort: 'distance'
+    },
+    roommate: {
+        type: ['cat', 'rabbit', 'bird'],
+        attributes: ['independent', 'quiet'],
+        sort: 'distance'
+    },
+    cuddly: {
+        type: 'dog',
+        size: ['small', 'medium'],
+        attributes: ['good_with_children', 'house_trained'],
+        age: ['baby', 'young'],
+        sort: 'distance'
+    }
 }

@@ -451,7 +451,6 @@ function initResults() {
     document.getElementById('result-type').textContent = result.title;
     document.getElementById('result-description').textContent = result.description;
     
-    // Fetch pets from Petfinder API
     fetchPets(petType);
 }
 

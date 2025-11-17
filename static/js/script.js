@@ -324,22 +324,22 @@ const petTypes = {
     adventurous: {
         title: "The Adventurous Pet",
         description: "You're perfect for an energetic companion who loves exploration and outdoor activities! Your active lifestyle pairs wonderfully with pets who need lots of exercise and mental stimulation.",
-        emoji: "🏃‍♂️🐕"
+        
     },
     spooky: {
-        title: "The Spooky Pet",
+        title: "The Curious Pet",
         description: "You appreciate unique personalities and mysterious charm! You're ideal for pets with distinctive characters who march to their own beat and bring something special to your life.",
-        emoji: "🌙🐱"
+       
     },
     roommate: {
         title: "The Roommate Pet",
         description: "You're looking for an independent companion who respects personal space! You're perfect for pets who are low-maintenance and content with parallel companionship.",
-        emoji: "🏠🐈"
+       
     },
     cuddly: {
         title: "The Cuddly Pet",
         description: "You want a loving, affectionate companion for cozy moments! You're ideal for pets who thrive on physical affection and quality time with their humans.",
-        emoji: "💕🐶"
+
     }
 };
 

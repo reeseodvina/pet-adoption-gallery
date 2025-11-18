@@ -12,7 +12,7 @@ function eventCalendar(elem, year, month) {
 
     let table = `
         <table>
-        <caption><i class="fa-solid fa-arrow-left left-arrow"></i>${date.toLocaleString('default', { month: 'long' })} ${year}<i class="fa-solid fa-arrow-right right-arrow"></caption>
+        <caption>${date.toLocaleString('default', { month: 'long' })} ${year}<i class="fa-solid fa-xmark"></i></caption>
         <tr>
             <th>Sunday</th><th>Monday</th><th>Tuesday</th>
             <th>Wednesday</th><th>Thursday</th><th>Friday</th><th>Saturday</th>
@@ -48,6 +48,12 @@ function eventCalendar(elem, year, month) {
 
     elem.innerHTML = table;
 
+    var closeCalendar = document.querySelector(".fa-xmark");
+        closeCalendar.addEventListener("click", () => {
+        calendarSpace.classList.remove("active")
+        calendarSpace.classList.add("inactive")
+    });
+
     var scheduleForm = document.getElementById('schedule-form');
     var closeScheduleForm = document.getElementById("close-schedule-form");
         
@@ -66,18 +72,23 @@ function eventCalendar(elem, year, month) {
         };
 
     elem.querySelectorAll("td[data-date]").forEach(td => {
+        var today = new Date();  
+        today.setHours(0,0,0,0);
+
+        var maxDate = new Date(); 
+        maxDate.setDate(today.getDate() + 7);
+
+        var selectedDate = new Date(td.dataset.date)
+        selectedDate.setHours(0, 0, 0, 0);
+        
+
+         if (selectedDate < today || selectedDate > maxDate) {
+            td.classList.add('invalid-date')
+         };
         
         td.addEventListener('click',() => {
-            var selectedDate = new Date(td.dataset.date)
-            selectedDate.setHours(0, 0, 0, 0);
-            var today = new Date();  
-            today.setHours(0,0,0,0);
-
-
-            var maxDate = new Date(); 
-            maxDate.setDate(today.getDate() + 7);
-
-            if (selectedDate < today || selectedDate > maxDate) {
+            
+            if (td.classList.contains("invalid-date")) {
                 alert(`You can only schedule from today to ${maxDate}`);
                 return;
             }
@@ -92,11 +103,10 @@ function eventCalendar(elem, year, month) {
 let selectedPetName = ""; 
 
 var galleryItems = document.querySelectorAll('.gallery-item');
+var calendarSpace = document.getElementById("calendar-space");
 
 galleryItems.forEach(item => {
     item.addEventListener("click", () => {
-
-        var calendarSpace = document.getElementById("calendar-space");
         var today = new Date();
 
         eventCalendar(calendarSpace, today.getFullYear(), today.getMonth() + 1);
@@ -107,10 +117,11 @@ galleryItems.forEach(item => {
 
         var petSelect = document.getElementById("pick-pet");
         petSelect.innerHTML = `<option selected>${selectedPetName}</option>`;
-        
-    });
+
+    })
 });
 
+});
 
 
 //Calendar form
@@ -182,13 +193,7 @@ function meetPet(event) {
             alert(`You're set to meet ${pickPet}!`)
     }
 
-    
-
-    
-
-
-
-
+ 
 
 //see more dropdown here
 function openTab() {
@@ -239,6 +244,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 4000);
     }
 })
+
 
 //This is for the quiz
 // Quiz Data Structure
@@ -677,4 +683,4 @@ const apiFilters = {
 
 
 
-});
+

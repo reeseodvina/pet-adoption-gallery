@@ -14,7 +14,7 @@ body {
     background-repeat: no-repeat;
     background-position: center;*/
     font-family: 'McLaren';
-    max-width: 95%;
+    
 }
 /*Star animation background*/
 #stars, #stars2, #stars3 {
@@ -188,6 +188,10 @@ h1 {
 
 p {
     color: #c6b3e4;
+    max-width: 95%;
+    text-align: center;
+    padding-left: 20px;
+    padding-right: 20px;
 }
 /*#webname {
     margin: 20px 20px 10px 20px;
@@ -238,7 +242,7 @@ p {
 
 button {
     cursor: pointer;
-    background-color: #5AA7FF;
+    background-color: #b9a4db;
     color: #ffffff;
     font-size: 20px;
     border: none;
@@ -249,7 +253,7 @@ button {
 
 button:hover {
     transition: background-color 0.5 ease-in;
-    background-color: #3f7ec7;
+    background-color: #8972af;
 }
 
 .see-more {
@@ -258,7 +262,7 @@ button:hover {
 }
 
 .inactive {
-    display: none;
+    display: none !important; 
 }
 
 .active {
@@ -665,41 +669,66 @@ button:hover {
 /*Calendar*/
 
 #calendar-space {
-    background-color: #204060;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #060e356b;
+    z-index: 1;
+}
+
+.fa-xmark {
+    float: right;
+}
+
+.fa-xmark:hover {
+    transform: scale(1.5);
+    transition: 0.5;
+    cursor: pointer;
 }
 
 #calendar-space table {
     text-align: center;
-    margin: 0 auto;
-    background-color: #f4e2b0;
-    border: 2.5px solid #F4D06F;
+    margin: 0 auto; 
+    background-color: #9158b8;
+    color: #c6b3e5;
+    border: 2.5px solid #74818e;
     border-radius: 10px;
     border-collapse: collapse;
     z-index: 2;
     position: fixed;
     top: 60%;
     left: 60%;
-    transform: translate(-50%, -50%); 
+    transform: translate(-70%, -60%); 
     justify-content: center;
     align-items: center;
 }
 
 #calendar-space th {
-    background-color: #F4D06F;
-    border: 2.5px dashed #ebc763;
+    background-color: #204060;
+    border: 2.5px dashed #74818e;
     height: 90px;
-    width: 200px;
+    width: calc(650px / 7);
 }
 
 #calendar-space td {
     cursor: pointer;
-    border: 2px solid #F4D06F;
+    border: 2px solid #74818e;
     height: 70px;
     font-size: 20px;
 }
 
+#calendar-space td:hover {
+    transform: scale(1.5);
+    transition: 0.5;
+}
+
 #calendar-space td:empty {
-    background-color: #ebd28e;
+    background-color: #7c3f91;
 }
 
 #calendar-space .left-arrow {
@@ -720,22 +749,26 @@ button:hover {
     padding-bottom: 10px;
 }
 
+.invalid-date {
+    background-color: #78429c;
+    color: #a293bb;
+}
 #schedule-form {
     position: fixed;
     top: 60%;
-    left: 60%;
+    left: 90%;
     transform: translate(-50%, -50%); 
     width: 100%;
     height: 100%;
     justify-content: center;
     align-items: center;
-    z-index: 4;
+    z-index: 3;
 }
 
 #schedule-content {
     display: flex;
     flex-direction: column;
-    background-color: #3f7ec7;
+    background-color: #78429c;
     color: #fff8f0;
     text-align: center;
     border-radius: 10px;

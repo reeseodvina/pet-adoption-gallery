@@ -327,7 +327,7 @@ const quizData = {
                         { text: "Hiking or outdoor adventure", scores: { adventurous: 3 } },
                         { text: "Relaxing at home", scores: { cuddly: 3 } },
                         { text: "Social gatherings", scores: { roommate: 2 } },
-                        { text: "Something unusual", scores: { curious: 3 } }
+                        { text: "Something different", scores: { curious: 3 } }
                     ]
                 },
                 {
@@ -363,7 +363,7 @@ const quizData = {
                     ]
                 },
                 {
-                    question: "How much noise can you tolerate?",
+                    question: "How much noise can you handle?",
                     answers: [
                         { text: "Love an expressive pet", scores: { adventurous: 2 } },
                         { text: "Some noise is fine", scores: { roommate: 2 } },
@@ -390,12 +390,12 @@ const quizData = {
                     ]
                 },
                 {
-                    question: "Long-term commitment level?",
+                    question: "How would you describe your dream pet?",
                     answers: [
-                        { text: "Lifetime companion", scores: { cuddly: 3, adventurous: 2 } },
-                        { text: "Many years together", scores: { roommate: 2 } },
-                        { text: "Open to see how it goes", scores: { curious: 1 } },
-                        { text: "Fully committed", scores: { adventurous: 2, cuddly: 2 } }
+                        { text: "An old soul", scores: { cuddly: 3, roommate: 3 } },
+                        { text: "A goofball", scores: { adventurous: 3, cuddly: 2 } },
+                        { text: "Nonchalant, but loving", scores: { roommate: 3, cuddly: 1 } },
+                        { text: "A mystery", scores: { curious: 3 } }
                     ]
                 }
             ]

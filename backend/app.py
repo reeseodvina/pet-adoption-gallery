@@ -58,6 +58,7 @@ def fetch_rescuegroups_pets(
                 "pictureThumbnailUrl",
             ]
         ),
+        "fields[pictures]": ",".join(["url", "small", "large", "original"]),
         "include": "pictures",
     }
 
@@ -88,7 +89,15 @@ def fetch_rescuegroups_pets(
             pics = (rel.get("pictures") or {}).get("data") or []
             if pics:
                 first = picmap.get(str(pics[0].get("id"))) or {}
-                img = first.get("small") or first.get("large") or first.get("original")
+                img = (
+                    first.get("url")
+                    or first.get("small")
+                    or first.get("large")
+                    or first.get("original")
+                )
+
+        if not img:
+            img = "https://via.placeholder.com/300x200?text=No+Image"
 
         summary = attrs.get("summary") or " • ".join(
             [p for p in [breed, age, sex] if p]
@@ -124,6 +133,7 @@ def _build_cards_html(pets: List[Dict[str, Any]]) -> str:
     out.append("        </div>\n")
     return "".join(out)
 
+
 @app.route("/api/gallery-pets")
 def api_gallery_pets():
     try:
@@ -143,7 +153,7 @@ def api_quiz_pets():
       - sex: Male | Female
       - limit: default 12
     """
-    species = request.args.get("species")  
+    species = request.args.get("species")
     age = request.args.get("age")
     sex = request.args.get("sex")
     limit = int(request.args.get("limit", "12"))
@@ -187,7 +197,6 @@ def about_page():
 @app.route("/quiz-intro")
 @app.route("/quiz-intro.html")
 def quiz_intro_page():
-    """Route for the quiz intro page linked as 'quiz-intro' in nav."""
     d, f = _find_asset("quiz-intro.html")
     return send_from_directory(d, f, mimetype="text/html")
 
@@ -218,18 +227,17 @@ def gallery_page():
     d, f = _find_asset("gallery.html")
     raw = Path(d, f).read_text(encoding="utf-8")
 
-    pets = fetch_rescuegroups_pets(limit=24, species_view=None, need_pics=True)
-    first = pets[:8]
-    second = pets[8:16]
+    pets = fetch_rescuegroups_pets(limit=60, species_view=None, need_pics=True)
+    first = pets[:8]   
+    second = pets[8:]     
 
     initial_html = _build_cards_html(first)
     added_html = _build_cards_html(second)
 
-    start_initial = raw.find('<div id="initial-list">')
+    start_initial = raw.find('<div id="initial-list"')
     start_added = raw.find('<div id="added-list"', start_initial)
-    end_added = raw.find("</div>\n    </div>\n    <button id=\"more-pets\"", start_added)
 
-    if start_initial == -1 or start_added == -1 or end_added == -1:
+    if start_initial == -1 or start_added == -1:
         app.logger.warning(
             "Could not find injection points in gallery.html; serving original file."
         )
@@ -242,11 +250,11 @@ def gallery_page():
         raw[:open_initial_end]
         + "\n"
         + initial_html
-        + "    "
+        + raw[open_initial_end:start_added]
         + raw[start_added:open_added_end]
         + "\n"
         + added_html
-        + raw[end_added:]
+        + raw[open_added_end:]
     )
 
     return Response(new_html, mimetype="text/html")
@@ -292,4 +300,3 @@ def not_found(e):
 
 if __name__ == "__main__":
     app.run(debug=True)
-

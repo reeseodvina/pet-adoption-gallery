@@ -538,43 +538,69 @@ function initResults() {
     fetchPets(petType);
 }
 
-// Fetch Pets from Rescue Groups API
 async function fetchPets(petType) {
     const matchesContainer = document.getElementById('matches-container');
-    
+    const typeToPreferences = {
+        adventurous: {
+            species: 'dogs',   
+            age: 'Adult',
+            sex: 'Female',
+            limit: 12
+        },
+        curious: {
+            species: 'cats',
+            age: 'Adult',
+            limit: 12
+        },
+        roommate: {
+            species: 'rabbits',
+            age: 'Adult',
+            limit: 12
+        },
+        cuddly: {
+            species: 'dogs',
+            age: 'Young',
+            limit: 12
+        }
+    };
+
+    const prefs = typeToPreferences[petType] || { species: 'dogs', limit: 12 };
+
     try {
-    
-        /*
-        const tokenResponse = await fetch('https://api.rescuegroups.org/v5', {
-            method: 'POST',
-            body: 'grant_type=client_credentials&client_id=YOUR_CLIENT_ID&client_secret=YOUR_CLIENT_SECRET',
-            headers: {
-                'Content-Type': 'application/x-www-form-urlencoded'
-            }
-        });
-        
-        const tokenData = await tokenResponse.json();
-        const token = tokenData.access_token;
-        
-        const response = await fetch('https://api.petfinder.com/v2/animals?location=33467&limit=10', {
-            headers: {
-                'Authorization': `Bearer ${token}`
-            }
-        });
-        
-        const data = await response.json();
-        displayMatches(data.animals, petType);
-        */
-        
-        // Mock data for demonstration
+
+        const params = new URLSearchParams(prefs).toString();
+        const res = await fetch(`/api/quiz-pets?${params}`);
+
+        if (!res.ok) {
+            throw new Error(`API error: ${res.status}`);
+        }
+
+        const data = await res.json();
+        const apiPets = data.pets || [];
+
+        if (!apiPets.length) {
+            throw new Error('No pets returned from API');
+        }
+
+        const adaptedPets = apiPets.map((p, index) => ({
+            name: p.name,
+            breed: p.breed || p.summary || 'Mixed Breed',
+            
+            age: p.age || 'Unknown',
+            distance: null,
+            relevance: 100 - index * 5
+        }));
+
+        displayMatches(adaptedPets, petType);
+    } catch (error) {
+        console.error('Error fetching pets from API, falling back to mock data:', error);
+        matchesContainer.innerHTML = '<p class="error">We had trouble loading live pets, showing example matches instead.</p>';
+
         const mockPets = generateMockPets(petType);
         displayMatches(mockPets, petType);
-        
-    } catch (error) {
-        matchesContainer.innerHTML = '<p class="error">Unable to load pets. Please try again later.</p>';
-        console.error('Error fetching pets:', error);
     }
 }
+
 
 // Generate Mock Pet Data
 function generateMockPets(petType) {
@@ -617,6 +643,8 @@ function displayMatches(pets, petType) {
         petCard.className = 'pet-card';
         
         const relevance = pet.relevance || (100 - (index * 10));
+        const ageText = pet.age ? `Age: ${pet.age}` : 'Age: Unknown';
+        const distanceText = pet.distance ? ` • Distance: ${pet.distance} miles` : '';
         
         petCard.innerHTML = `
             <div class="pet-card-header">
@@ -678,9 +706,3 @@ const apiFilters = {
         sort: 'distance'
     }
 }
-
-
-
-
-
-

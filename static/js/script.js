@@ -216,7 +216,7 @@ function openTab() {
 
 //Scroll content
 
-
+/*
 document.addEventListener('DOMContentLoaded', () => {
     var content = document.querySelector(".content");
     var rightArrow = document.getElementById('right-arrow');
@@ -244,6 +244,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 4000);
     }
 })
+*/
 
 
 //This is for the quiz

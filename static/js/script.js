@@ -527,6 +527,7 @@ function completeQuiz() {
     window.location.href = 'results.html';
 }
 
+
 // Initialize Results Page
 function initResults() {
     const petType = localStorage.getItem('petType') || 'cuddly';
@@ -582,14 +583,15 @@ async function fetchPets(petType) {
             throw new Error('No pets returned from API');
         }
 
-        const adaptedPets = apiPets.map((p, index) => ({
-            name: p.name,
-            breed: p.breed || p.summary || 'Mixed Breed',
-            
-            age: p.age || 'Unknown',
-            distance: null,
-            relevance: 100 - index * 5
+       const adaptedPets = apiPets.map((p, index) => ({
+        name: p.name,
+        breed: p.breed || p.summary || 'Mixed Breed',
+        age: p.age || 'Unknown',
+        distance: null,
+        relevance: 100 - index * 5,
+        image: p.image || null         
         }));
+
 
         displayMatches(adaptedPets, petType);
     } catch (error) {
@@ -646,15 +648,23 @@ function displayMatches(pets, petType) {
         const ageText = pet.age ? `Age: ${pet.age}` : 'Age: Unknown';
         const distanceText = pet.distance ? ` • Distance: ${pet.distance} miles` : '';
         
-        petCard.innerHTML = `
-            <div class="pet-card-header">
-                <h3>${pet.name}</h3>
-                <span class="relevance">${relevance}% Match</span>
-            </div>
-            <p class="pet-breed">${pet.breed || 'Mixed Breed'}</p>
-            <p class="pet-details">Age: ${pet.age || 'Unknown'} years • Distance: ${pet.distance || 'N/A'} miles</p>
-            <div class="pet-icon">${getPetIcon(petType)}</div>
-        `;
+        const imgHtml = pet.image
+    ? `<img class="pet-image" src="${pet.image}" alt="${pet.name}">`
+    : '';
+
+    petCard.innerHTML = `
+        <div class="pet-card-header">
+            <h3>${pet.name}</h3>
+            <span class="relevance">${relevance}% Match</span>
+        </div>
+        ${imgHtml}
+        <p class="pet-breed">${pet.breed || 'Mixed Breed'}</p>
+        <p class="pet-details">
+            Age: ${pet.age || 'Unknown'} years • Distance: ${pet.distance || 'N/A'} miles
+        </p>
+        <div class="pet-icon">${getPetIcon(petType)}</div>
+    `;
+
         
         matchesContainer.appendChild(petCard);
     });
@@ -671,7 +681,6 @@ function getPetIcon(petType) {
     return icons[petType] || '🐾';
 }
 
-// Initialize appropriate page
 if (window.location.pathname.includes('quiz.html')) {
     document.addEventListener('DOMContentLoaded', initQuiz);
 } else if (window.location.pathname.includes('results.html')) {
